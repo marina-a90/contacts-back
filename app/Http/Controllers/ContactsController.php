@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Contact;
 
-class ContacsControlles extends Controller
+class ContactsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,7 @@ class ContacsControlles extends Controller
      */
     public function index()
     {
-        //
+        return Contact::all();
     }
 
     /**
