@@ -17,6 +17,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('contacts', 'ContactsController@index');
+// Route::get('contacts', 'ContactsController@index');
 // automatski doda prefiks api
 // ruta je /localhost/api/contacts
+//mogu da koristim i resource controller
+Route::resource('contacts', 'ContactsController');

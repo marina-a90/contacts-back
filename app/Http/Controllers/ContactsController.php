@@ -36,7 +36,20 @@ class ContactsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        \Log::info(print_r($request->all(), true));
+        // sa true vrati string, a inace vrati true
+
+        // ako se polja u postmanu i tu ne zovu isto
+        // Contact::create([
+        //     'first_name' => $request->first_name,
+        //     'last_name' => $request->last_name,
+        //     'email' => $request->email,
+        // ]);
+
+        // ako se sva polja isto zovu, mogu sve odjednom za pozovem
+        Contact::create($request->all());
+
+        //fali nam fillable. to dodati u modelu
     }
 
     /**
