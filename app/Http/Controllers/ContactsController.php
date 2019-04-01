@@ -111,6 +111,6 @@ class ContactsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return Contact::destroy($id);
     }
 }
