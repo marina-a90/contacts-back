@@ -13,11 +13,12 @@ use Illuminate\Http\Request;
 |
 */
 
-header('Access-Control-Allow-Origin: *');
-// dozvoljavam bilo koji origin 
-header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
-header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
-// dozvoljavam ove requestove
+// header('Access-Control-Allow-Origin: *');
+// // dozvoljavam bilo koji origin 
+// header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
+// header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
+// // dozvoljavam ove requestove
+// ovo je bilo privremeno resenje - sad sa laravel-cors paketom je reseno sve
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
