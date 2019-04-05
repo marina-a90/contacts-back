@@ -12,5 +12,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(ContactsTableSeeder::class);
+        // $this->call(UsersTableSeeder::class);   
+        // ili     
+        // php artisan db:seed --class=UsersTableSeeder
     }
 }

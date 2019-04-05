@@ -29,3 +29,18 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // ruta je /localhost/api/contacts
 //mogu da koristim i resource controller
 Route::resource('contacts', 'ContactsController');
+
+Route::group([
+    'middleware' => 'api',      // definisali smo da je auth api, zato su sve u grupi auth
+    'prefix' => 'auth'        // za login: api/auth/login - prefix
+], function ($router) {
+
+    Route::post('login', 'AuthController@login');
+    Route::post('logout', 'AuthController@logout');     // logout ne mora da se radi na backu, al trebalo bi
+                                                        // cuva front na local storage
+                                                        // kad izlogujemo, obrisemo token
+                                                        // request da back odradi logout tako sto ponisti token
+    Route::post('refresh', 'AuthController@refresh');
+    Route::post('me', 'AuthController@me');
+
+});

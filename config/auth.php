@@ -13,8 +13,10 @@ return [
     |
     */
 
+    //dodato za auth
+    // ima samo api auth, nema web
     'defaults' => [
-        'guard' => 'web',
+        'guard' => 'api',
         'passwords' => 'users',
     ],
 
@@ -35,6 +37,7 @@ return [
     |
     */
 
+    //dodato za auth
     'guards' => [
         'web' => [
             'driver' => 'session',
@@ -42,7 +45,7 @@ return [
         ],
 
         'api' => [
-            'driver' => 'token',
+            'driver' => 'jwt',
             'provider' => 'users',
         ],
     ],
