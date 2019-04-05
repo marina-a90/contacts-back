@@ -28,7 +28,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // automatski doda prefiks api
 // ruta je /localhost/api/contacts
 //mogu da koristim i resource controller
-Route::resource('contacts', 'ContactsController');
+Route::resource('contacts', 'ContactsController')->middleware('auth:api');
 
 Route::group([
     'middleware' => 'api',      // definisali smo da je auth api, zato su sve u grupi auth
